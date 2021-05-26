@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import Card from "../../Utils/Card/Card"
 
+import {SHIP_API} from "../../../Constants/api_constant"
+
 import "./Ship.css"
 
 function Ship() {
@@ -22,7 +24,7 @@ function Ship() {
             <h1>Ship</h1>
             <div className="ship_info_list">
                 {ships.map((ship) => {
-                    return <Card key={ship.ship_name} name={ship.ship_name} img={ship.image} type={ship.ship_type}/>
+                    return <Card apiType={SHIP_API} key={ship.ship_id} info={ship} />
                 })}
             </div>
         </div>
