@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import "./Menu.css"
+import "./Menu.css";
+
 function Menu() {
-    const menuItems = ["Astronaut", "Vehicles", "Our System"]
-    return (
-        <div className="menu_container">
-            {menuItems.map((item) => {
-                return <h4 className="menu_items">{item}</h4>
-            })}
-        </div>
-    )
+  const menuItems = ["Launches", "Rockets", "Ships"];
+  return (
+    <div className="menu_container">
+      {menuItems.map((item) => {
+        return <h4 className="menu_items">{item}</h4>;
+      })}
+    </div>
+  );
 }
 
-export default Menu
+export default Menu;
