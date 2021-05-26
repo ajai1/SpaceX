@@ -12,15 +12,19 @@ function Card({apiType, info}) {
                 info[key] ? classes.push("active") : classes.push("non_active")
             }
             else if(key=="name"){
-                console.log(info[key])
-                return  <h1>{info[key]}</h1>
+                console.log(info[apiType[key]])
+                return  <h1>{info[apiType[key]]}</h1>
             }
             else if(key=="image"){
                 return <a href={info.url} target="_blank">
-                        <img className="card_image" src={info[key]}></img>
+                        <img className="card_image" src={info[apiType[key]]}></img>
                     </a>
+            }
+            else if(key=="wikipedia"){
+                return <iframe src={info[apiType[key]]} width="600" height="200"/>
+                       
             }else{
-                return <h3>{info[key]}</h3>
+                return <h3>{info[apiType[key]]}</h3>
             }
         })
         console.log(info.active)
