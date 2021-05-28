@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-
+import {connect} from "react-redux"
+import {openMenu} from "../../Redux/Action/NavAction"
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Menu from "./Menu/Menu"
 
 import "./Nav.css"
 
-const Nav = () => {
+const Nav = ({menu, openMenu}) => {
 
     const [isExploreTab, setExploreTab] = useState(false); 
 
@@ -16,8 +17,8 @@ const Nav = () => {
             </div>
             <div className="nav_tabs">
                 <div className="nav_tabs_explore">
-                    <h3 onClick={()=> setExploreTab(!isExploreTab)}>Explore <small>&#9660;</small> </h3>
-                    {isExploreTab && <Menu/>}
+                    <h3 onClick={openMenu}>Explore <small>&#9660;</small> </h3>
+                    {menu && <Menu/>}
                 </div>
                
                 <h3>Contact</h3>
@@ -29,4 +30,8 @@ const Nav = () => {
     )
 }
 
-export default Nav
+const mapStateToProp = (state) => {
+    return { menu : state.NavReducer.menu}
+}
+
+export default connect(mapStateToProp, {openMenu})(Nav)
