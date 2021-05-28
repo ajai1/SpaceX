@@ -14,9 +14,9 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Nav />
-
-        {/*  <Login/>   */}
-        <Dashboard />
+        <Login />
+        {/*         <Dashboard />
+         */}
       </div>
     </Provider>
   );
