@@ -5,9 +5,13 @@ export function loginAction(user) {
   return async (dispatch) => {
     try {
       let res = await fetch(
-        "https://run.mocky.io/v3/5d0dd324-06af-46e5-91fc-2c8a01de06ea",
+      "https://run.mocky.io/v3/fa7e7fb5-5a50-4b13-a8c2-38fad332566a",
         {
           method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: {user}
         }
       );
       console.log(res);
