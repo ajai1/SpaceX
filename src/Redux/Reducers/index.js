@@ -1,3 +1,4 @@
 import { combineReducers } from "redux";
+import { LaunchReducer } from "./Dashboard/Launches/LaunchReducer";
 
-export default combineReducers({  });
+export const rootReducer = combineReducers({ LaunchReducer });
