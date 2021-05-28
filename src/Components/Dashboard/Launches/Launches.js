@@ -46,8 +46,6 @@ function Launches() {
   }
 
 
-
-
   return <div className="launches_container">
     {launches && 
       <div className="launches_list">
@@ -71,7 +69,10 @@ function Launches() {
       </div>
     }
    
-    {launch && <LaunchInfo launch={launch}/>}
+    {launch ? <LaunchInfo launch={launch}/> : <div className="flex_center_column" style={{color:"white"}}>
+        <h3>Learn more about the Launches</h3>
+        <h4>Select any of the Launches above</h4>
+    </div>}
     {shopBuyPremium && <SignUpToday/>}
 
   {/*  {
