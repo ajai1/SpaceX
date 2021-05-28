@@ -4,23 +4,37 @@ export function loginAction(user) {
   console.log("hii");
   return async (dispatch) => {
     try {
-      let res = await fetch(
-      "https://run.mocky.io/v3/fa7e7fb5-5a50-4b13-a8c2-38fad332566a",
-        {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: {user}
+      if(user.username == "admin"){
+        if(user.password == "admin123"){
+          let res = await fetch(
+            "https://run.mocky.io/v3/fa7e7fb5-5a50-4b13-a8c2-38fad332566a",
+              {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: {user}
+              }
+            );
+            let data = await res.json();
+            return dispatch({ type: LOGIN, payload: data });
+        }else{
+          alert("Invalid Credentials")
+          return dispatch({ type: LOGIN, payload: {isLogin: false, isPremium: false} })
         }
-      );
-      console.log(res);
-      let data = await res.json();
-
-      console.log(data);
-      return dispatch({ type: LOGIN, payload: data });
+      }else{
+        alert("Invalid Credentials")
+        return dispatch({ type: LOGIN, payload: {isLogin: false, isPremium: false} })
+      }
     } catch {
       console.log("error");
     }
+  };
+}
+
+export function guestLoginAction () {
+  return {
+    type: LOGIN,
+    payload: {isLogin: true, isPremium: false},
   };
 }

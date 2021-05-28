@@ -10,10 +10,9 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./Launches.css";
 import SignUpToday from "../../Alerts/SignUpToday";
 
-function Launches({ launches, fetchData }) {
+function Launches({ launches, fetchData, isPremium }) {
   const [launch, setLaunch] = useState();
   const [limit, setLimit] = useState(0);
-  const [isPremium, setPremium] = useState(true);
   const [shopBuyPremium, setShowBuyPremium] = useState(false);
   console.log(launches);
   useEffect(() => {
@@ -103,7 +102,7 @@ function Launches({ launches, fetchData }) {
 }
 
 const mapStateToProps = (state) => {
-  return { launches: state.LaunchReducer.launches };
+  return { launches: state.LaunchReducer.launches, isPremium: state.UserReducer.isPremium };
 };
 
 export default connect(mapStateToProps, { fetchData })(Launches);

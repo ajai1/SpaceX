@@ -8,13 +8,13 @@ import store from "./Redux/store";
 import { Provider } from "react-redux";
 //CSS -----------------------------------------------------------------------------------
 import "./App.css";
+import Content from "./Components/Content";
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Nav />
-        <Login />
+        <Content/>
         {/*         <Dashboard />
          */}
       </div>

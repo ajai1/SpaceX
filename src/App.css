@@ -6,6 +6,12 @@ body {
   background-attachment: fixed;
 }
 
+.flex_row_around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .flex_center {
   display: flex;
   justify-content: center;
