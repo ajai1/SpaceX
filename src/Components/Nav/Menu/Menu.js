@@ -1,23 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
-import { dashboardPage } from "../../../Redux/Action/Dashboard/DashboardAction";
 import { closeMenu } from "../../../Redux/Action/NavAction";
+import { useHistory } from "react-router-dom";
 
 import "./Menu.css";
 
-function Menu({ dashboardPage, closeMenu }) {
+function Menu({ closeMenu }) {
   const menuItems = ["Launches", "Info"];
 
-  const onSelectMenu = (item) => {
-    dashboardPage(item);
+  const history = useHistory();
+
+  function changePage(item) {
     closeMenu();
-  };
+    history.push(`/${item.toLowerCase()}`);
+  }
 
   return (
     <div className="menu_container">
       {menuItems.map((item) => {
         return (
-          <h4 className="menu_items" onClick={() => onSelectMenu(item)}>
+          <h4 className="menu_items" onClick={() => changePage(item)}>
             {item}
           </h4>
         );
@@ -26,4 +28,4 @@ function Menu({ dashboardPage, closeMenu }) {
   );
 }
 
-export default connect(null, { dashboardPage, closeMenu })(Menu);
+export default connect(null, { closeMenu })(Menu);

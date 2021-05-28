@@ -1,4 +1,4 @@
-import { LAUNCHES, INFO, PAGE } from "../../Constants";
+import { INFO, PAGE } from "../../Constants";
 const initialState = {
   page: INFO,
 };

@@ -4,7 +4,6 @@ import { fetchData } from "../../../Redux/Action/Dashboard/Launches/LaunchAction
 
 import LaunchInfo from "./LaunchInfo";
 
-import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./Launches.css";
@@ -54,7 +53,6 @@ function Launches({ launches, fetchData, isPremium }) {
               <ChevronLeftIcon fontSize="large" />
             </div>
           </div>
-
           {launches &&
             launches.map((launch) => {
               return (
@@ -71,7 +69,6 @@ function Launches({ launches, fetchData, isPremium }) {
                 </div>
               );
             })}
-
           <div className="flex_center">
             <div
               className="each_launch_item arrow_nav"
@@ -83,7 +80,6 @@ function Launches({ launches, fetchData, isPremium }) {
           </div>
         </div>
       )}
-
       {launch ? (
         <LaunchInfo launch={launch} />
       ) : (
@@ -93,16 +89,15 @@ function Launches({ launches, fetchData, isPremium }) {
         </div>
       )}
       {shopBuyPremium && <SignUpToday />}
-
-      {/*  {
-      launches && launches.map((launch)=> <LaunchInfo launch={launch}/>)
-    }  */}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  return { launches: state.LaunchReducer.launches, isPremium: state.UserReducer.isPremium };
+  return {
+    launches: state.LaunchReducer.launches,
+    isPremium: state.UserReducer.isPremium,
+  };
 };
 
 export default connect(mapStateToProps, { fetchData })(Launches);
