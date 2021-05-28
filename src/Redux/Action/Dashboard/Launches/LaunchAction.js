@@ -1,13 +1,11 @@
-const LAUNCHES = "Launches";
-const SHIPS = "Ships";
-const ROCKETS = "Rockets";
+import { LAUNCHES } from "../../../Constants";
 
-export function fetchData(action) {
-  console.log("hiii");
+export function fetchData(limit) {
   return async (dispatch) => {
-    console.log("action");
     try {
-      let res = await fetch("https://api.spacexdata.com/v3/launches");
+      let res = await fetch(
+        `https://api.spacexdata.com/v3/launches?limit=5&offset=${limit}`
+      );
       let data = await res.json();
       console.log(data);
       return dispatch({

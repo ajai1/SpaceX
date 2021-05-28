@@ -1,11 +1,12 @@
+import { LAUNCHES } from "../../../Constants";
 const initialState = {
-  fetchedData: {},
+  launches: [],
 };
 
 export function LaunchReducer(state = initialState, action) {
   switch (action.type) {
-    case "Launches": {
-      let copyState = { ...state, fetchedData: action.payload };
+    case LAUNCHES: {
+      let copyState = { ...state, launches: action.payload };
       return copyState;
     }
     default: {

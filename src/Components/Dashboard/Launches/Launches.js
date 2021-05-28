@@ -10,24 +10,14 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import "./Launches.css";
 import SignUpToday from "../../Alerts/SignUpToday";
 
-function Launches({ fetchData }) {
-  const [launches, setLaunches] = useState([]);
+function Launches({ launches, fetchData }) {
   const [launch, setLaunch] = useState();
   const [limit, setLimit] = useState(0);
   const [isPremium, setPremium] = useState(true);
   const [shopBuyPremium, setShowBuyPremium] = useState(false);
-
+  console.log(launches);
   useEffect(() => {
-    async function getData() {
-      let res = await fetch(
-        `https://api.spacexdata.com/v3/launches?limit=5&offset=${limit}`
-      );
-      let data = await res.json();
-      setLaunches(data);
-      //setLaunch(data[2]);
-    }
-    //getData();
-    fetchData("Launches");
+    fetchData(limit);
   }, [limit]);
 
   const changeLimit = (type) => {
@@ -70,6 +60,7 @@ function Launches({ fetchData }) {
             launches.map((launch) => {
               return (
                 <div
+                  key={launch.flight_number}
                   className={
                     launch.launch_success
                       ? "each_launch_item mission_hover"
@@ -112,7 +103,7 @@ function Launches({ fetchData }) {
 }
 
 const mapStateToProps = (state) => {
-  return { state: state };
+  return { launches: state.LaunchReducer.launches };
 };
 
 export default connect(mapStateToProps, { fetchData })(Launches);
