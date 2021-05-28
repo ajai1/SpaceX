@@ -40,45 +40,43 @@ const LaunchInfo = ({launch}) => {
             </AccordionSummary>
             <AccordionDetails>
                 <div style={{display:"flex", flexDirection:"column", width:'100%'}}>
-                <div style={{display:"flex", justifyContent:"center", width:'100%', marginBottom:"2em"}}>
-                    <iframe width="620" height="345" src={"https://www.youtube.com/embed/" + launch.links.youtube_id}/>
+                    <div style={{display:"flex", justifyContent:"space-around", width:'100%', marginBottom:"2em"}}>
+                        <iframe width="620" height="345" src={"https://www.youtube.com/embed/" + launch.links.youtube_id}/>
+                        <div  style={{display:"flex", flexDirection:"column" ,alignItems:"space-around", width:'40em'}}>
+                            <div style={{width:"100%", marginBottom:"1em"}}>
+                                <Accordion >
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}>
+                                            <Typography >First Stage</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails style={{display:"flex", flexDirection:"column"}}>
+                                            <Typography variant="h4">{launch.rocket.rocket_name}</Typography>
+                                            <Typography variant="h6" >Rocket Type: {launch.rocket.rocket_type}</Typography>
+                                            {cores.map((core, i) => <Typography variant="h6" key={i}>Core Serial: {core.core_serial}</Typography>)}
+                                        </AccordionDetails>
+                                </Accordion>
+                            </div>
+                            <div style={{width:"100%"}}>
+                                <Accordion >
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}>
+                                        <Typography >Second Stage</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        {payloads.map((payload) => {
+                                            return <div key={payload.payload_id} style={{display:"flex", flexDirection:"column"}}>
+                                            <Typography variant="h4">{payload.payload_id}</Typography>
+                                            <Typography variant="h6">Customers: {payload.customers.join(", ")}</Typography>
+                                            {payload.nationality && <Typography variant="h6">Nationality: {payload.nationality}</Typography>}
+                                            {payload.manufacturer && <Typography variant="h6">Manufacturer: {payload.manufacturer}</Typography>}
+                                            </div>
+                                        })}
+                                    </AccordionDetails>
+                                </Accordion>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div  style={{display:"flex", justifyContent:"space-around", width:'100%'}}>
-                <div style={{width:"100%", marginRight:"1em"}}>
-                    <Accordion >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                            >
-                                <Typography >First Stage</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails style={{display:"flex", flexDirection:"column"}}>
-                                <Typography variant="h4">{launch.rocket.rocket_name}</Typography>
-                                <Typography variant="h6" >Rocket Type: {launch.rocket.rocket_type}</Typography>
-                                {cores.map((core, i) => <Typography variant="h6" key={i}>Core Serial: {core.core_serial}</Typography>)}
-                            </AccordionDetails>
-                    </Accordion>
-                </div>
-                <div style={{width:"100%"}}>
-                    <Accordion >
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                        >
-                            <Typography >Second Stage</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            {payloads.map((payload) => {
-                                return <div key={payload.payload_id} style={{display:"flex", flexDirection:"column"}}>
-                                <Typography variant="h4">{payload.payload_id}</Typography>
-                                <Typography variant="h6">Customers: {payload.customers.join(", ")}</Typography>
-                                <Typography variant="h6">Nationality: {payload.nationality}</Typography>
-                                <Typography variant="h6">Manufacturer: {payload.manufacturer}</Typography>
-                                </div>
-                            })}
-                        </AccordionDetails>
-                    </Accordion>
-                </div>
-            </div>
-            </div>
             </AccordionDetails>
         </Accordion>
     )
