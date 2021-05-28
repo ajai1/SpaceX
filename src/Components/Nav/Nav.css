@@ -1,23 +1,26 @@
-.nav_container{
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    color: white;
+.nav_container {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
-.nav_tabs{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30em;
-    color: gray;
-    cursor: pointer;
+.nav_tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30em;
+  color: gray;
+  cursor: pointer;
 }
 
 .nav_tabs h3:hover {
-    color: white;
+  color: white;
 }
 
-.nav_tabs_explore{
-    position: relative;
+.nav_tabs_explore {
+  position: relative;
 }

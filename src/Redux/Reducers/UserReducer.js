@@ -1,4 +1,4 @@
-import { LOGIN, PREMIUM } from "../Constants";
+import { LOGIN } from "../Constants";
 
 const initialState = {
   isPremium: false,

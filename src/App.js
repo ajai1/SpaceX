@@ -14,9 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Content/>
-        {/*         <Dashboard />
-         */}
+        <Content />
       </div>
     </Provider>
   );

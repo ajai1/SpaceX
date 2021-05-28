@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 
 import Launches from "./Launches/Launches";
 import Info from "./Info/Info";
-import { LAUNCHES, INFO } from "../../Redux/Constants";
+import { LAUNCHES, INFO, CONTACT } from "../../Redux/Constants";
 
 const Dashboard = ({ page }) => {
+  console.log(page);
   return (
-    <div>
-      <h2>Dashboard</h2>
+    <div style={{ marginTop: "5em" }}>
       {page == INFO && <Info />}
       {page == LAUNCHES && <Launches />}
     </div>

@@ -1,15 +1,15 @@
-import {MENU} from "../Constants"
+import { MENU } from "../Constants";
 
-export function openMenu () {
-    return {
-        type: MENU,
-        payload: true
-    }
+export function openMenu() {
+  return {
+    type: MENU,
+    payload: true,
+  };
 }
 
-export function closeMenu () {
-    return {
-        type: MENU,
-        payload: false
-    }
+export function closeMenu() {
+  return {
+    type: MENU,
+    payload: false,
+  };
 }

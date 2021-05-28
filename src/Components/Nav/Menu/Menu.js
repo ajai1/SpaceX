@@ -1,17 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { dashboardPage } from "../../../Redux/Action/Dashboard/DashboardAction";
-import {closeMenu} from "../../../Redux/Action/NavAction"
+import { closeMenu } from "../../../Redux/Action/NavAction";
 
 import "./Menu.css";
 
 function Menu({ dashboardPage, closeMenu }) {
-  const menuItems = ["Launches", "Rockets", "Info"];
+  const menuItems = ["Launches", "Info"];
 
   const onSelectMenu = (item) => {
-    dashboardPage(item)
-    closeMenu()
-  }
+    dashboardPage(item);
+    closeMenu();
+  };
 
   return (
     <div className="menu_container">
