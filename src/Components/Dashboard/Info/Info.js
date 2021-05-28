@@ -8,7 +8,6 @@ import "./Info.css";
 const Info = (props) => {
   const [info, setInfo] = useState({});
 
-  console.log("infooo");
   useEffect(() => {
     async function getData() {
       let res = await fetch(`https://api.spacexdata.com/v3/info`);

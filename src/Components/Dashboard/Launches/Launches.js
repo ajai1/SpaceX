@@ -13,7 +13,6 @@ function Launches({ launches, fetchData, isPremium }) {
   const [launch, setLaunch] = useState();
   const [limit, setLimit] = useState(0);
   const [shopBuyPremium, setShowBuyPremium] = useState(false);
-  console.log(launches);
   useEffect(() => {
     fetchData(limit);
   }, [limit]);
