@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Menu from "./Menu/Menu"
 
 import "./Nav.css"
@@ -21,6 +22,7 @@ const Nav = () => {
                
                 <h3>Contact</h3>
                 <h3>About</h3>
+                <AccountCircleIcon fontSize="large"/>
                
             </div>
         </div>

@@ -49,25 +49,27 @@ function Launches() {
 
 
   return <div className="launches_container">
-    <div className="launches_list">
-      <div className="flex_center">
-          <div className="each_launch_item arrow_nav" style={{width:'3em'}} onClick={()=>changeLimit("prev")}>
-            <ChevronLeftIcon fontSize="large"/>
-          </div>
-      </div>
-       
-      {launches && launches.map((launch)=> {
-        return <div className={launch.launch_success ? "each_launch_item mission_hover" : "each_launch_item mission_hover" } onClick={()=>setLaunch(launch)}>
-          <h4>{launch.mission_name}</h4>
+    {launches && 
+      <div className="launches_list">
+        <div className="flex_center">
+            <div className="each_launch_item arrow_nav" style={{width:'3em'}} onClick={()=>changeLimit("prev")}>
+              <ChevronLeftIcon fontSize="large"/>
+            </div>
         </div>
-      })}
-
-      <div className="flex_center">
-          <div className="each_launch_item arrow_nav" style={{width:'3em'}} onClick={()=>changeLimit("next")}>
-            <ChevronRightIcon fontSize="large"/>
+        
+        {launches && launches.map((launch)=> {
+          return <div className={launch.launch_success ? "each_launch_item mission_hover" : "each_launch_item mission_hover" } onClick={()=>setLaunch(launch)}>
+            <h4>{launch.mission_name}</h4>
           </div>
+        })}
+
+        <div className="flex_center">
+            <div className="each_launch_item arrow_nav" style={{width:'3em'}} onClick={()=>changeLimit("next")}>
+              <ChevronRightIcon fontSize="large"/>
+            </div>
+        </div>
       </div>
-    </div>
+    }
    
     {launch && <LaunchInfo launch={launch}/>}
     {shopBuyPremium && <SignUpToday/>}
