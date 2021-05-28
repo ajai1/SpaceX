@@ -14,7 +14,7 @@ function Launches({ fetchData }) {
   const [launches, setLaunches] = useState([]);
   const [launch, setLaunch] = useState();
   const [limit, setLimit] = useState(0);
-  const [isPremium, setPremium] = useState(false);
+  const [isPremium, setPremium] = useState(true);
   const [shopBuyPremium, setShowBuyPremium] = useState(false);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ function Launches({ fetchData }) {
 
   const changeLimit = (type) => {
     if (type == "prev") {
-      if (isPremium && limit != 5) {
-        setLimit(limit - 5);
+      if (isPremium) {
+        if (limit != 0) setLimit(limit - 5);
       } else {
         setShowBuyPremium(true);
         setTimeout(() => {
