@@ -11,8 +11,8 @@ import SignUpToday from "../../Alerts/SignUpToday"
 function Launches() {
   const [launches, setLaunches] = useState([]);
   const [launch, setLaunch] = useState();
-  const [limit, setLimit] = useState(5);
-  const [isPremium, setPremium] = useState(false)
+  const [limit, setLimit] = useState(0);
+  const [isPremium, setPremium] = useState(true)
   const [shopBuyPremium, setShowBuyPremium] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,8 @@ function Launches() {
 
   const changeLimit = (type) => {
     if(type == "prev"){
-      if(isPremium && limit != 5){
+      if(isPremium){
+        if(limit != 0)
         setLimit(limit-5)
       }else{
         setShowBuyPremium(true)
