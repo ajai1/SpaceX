@@ -60,25 +60,25 @@ const LaunchInfo = ({launch}) => {
                 </div>
                 <div style={{width:"100%"}}>
                     <Accordion >
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                            >
-                                <Typography >Second Stage</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                {payloads.map((payload) => {
-                                    return <div key={payload.payload_id} style={{display:"flex", flexDirection:"column"}}>
-                                    <Typography variant="h4">{payload.payload_id}</Typography>
-                                    <Typography variant="h6">Customers: {payload.customers.join(", ")}</Typography>
-                                    <Typography variant="h6">Nationality: {payload.nationality}</Typography>
-                                    <Typography variant="h6">Manufacturer: {payload.manufacturer}</Typography>
-                                    </div>
-                                })}
-                            </AccordionDetails>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                        >
+                            <Typography >Second Stage</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {payloads.map((payload) => {
+                                return <div key={payload.payload_id} style={{display:"flex", flexDirection:"column"}}>
+                                <Typography variant="h4">{payload.payload_id}</Typography>
+                                <Typography variant="h6">Customers: {payload.customers.join(", ")}</Typography>
+                                <Typography variant="h6">Nationality: {payload.nationality}</Typography>
+                                <Typography variant="h6">Manufacturer: {payload.manufacturer}</Typography>
+                                </div>
+                            })}
+                        </AccordionDetails>
                     </Accordion>
                 </div>
-                </div>
-                </div>
+            </div>
+            </div>
             </AccordionDetails>
         </Accordion>
     )
