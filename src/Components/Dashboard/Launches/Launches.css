@@ -14,19 +14,6 @@
 
 }
 
-.flex_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex_center_column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .each_launch_item{
     display: flex;
     justify-content: center;

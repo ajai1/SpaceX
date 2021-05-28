@@ -7,7 +7,7 @@ function Menu() {
   return (
     <div className="menu_container">
       {menuItems.map((item) => {
-        return <h4 className="menu_items">{item}</h4>;
+        return <h4 className="menu_items" >{item}</h4>;
       })}
     </div>
   );
