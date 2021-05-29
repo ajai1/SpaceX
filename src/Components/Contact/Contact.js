@@ -10,15 +10,15 @@ function Contact() {
     <div className="flex_center contact_container">
       <div className="flex_row_around contact_modal">
         <div>
-          <h1>Sandhya</h1>
-          <h4>sandhyajainte@gmail.com</h4>
-          <h4>+91 9480335501</h4>
+          <h1>Ajai Kumar</h1>
+          <h4>emailtoajai@gmail.com</h4>
+          <h4>+91 8870059091</h4>
         </div>
         <div className="flex_row_around" style={{ width: "20em" }}>
-          <a href="https://github.com/chayasandhya" target="_blank">
+          <a href="https://github.com/ajai1" target="_blank">
             <GitHubIcon fontSize="large" />
           </a>
-          <a href="https://www.linkedin.com/in/iam-sandhya/" target="_blank">
+          <a href="https://www.linkedin.com/in/iamajai/" target="_blank">
             <LinkedInIcon fontSize="large" />
           </a>
         </div>
