@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+//images -------------------------------------------------------------------------------
 import Elon_Musk from "../../../Static/Elon_Musk.jpeg";
 import Gwynne_Shotwell from "../../../Static/Gwynne_Shotwell.jpeg";
-
+//CSS -----------------------------------------------------------------------------------
 import "./Info.css";
 
 const Info = () => {

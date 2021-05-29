@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+//Redux --------------------------------------------------------------------------------
 import { connect } from "react-redux";
 import { fetchData } from "../../../Redux/Action/Dashboard/Launches/LaunchAction";
-
+//Component --------------------------------------------------------------------------------
+import SignUpToday from "../../Alerts/SignUpToday";
 import LaunchInfo from "./LaunchInfo";
-
+//material ui ----------------------------------------------------------------------------
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+//CSS -----------------------------------------------------------------------------------
 import "./Launches.css";
-import SignUpToday from "../../Alerts/SignUpToday";
 
 function Launches({ launches, fetchData, isPremium }) {
   const [launch, setLaunch] = useState();

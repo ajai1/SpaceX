@@ -1,8 +1,10 @@
 import React from "react";
+//Redux --------------------------------------------------------------------------------
 import { connect } from "react-redux";
 import { closeMenu } from "../../../Redux/Action/NavAction";
+//routing -----------------------------------------------------------------------------
 import { useHistory } from "react-router-dom";
-
+//CSS -----------------------------------------------------------------------------------
 import "./Menu.css";
 
 function Menu({ closeMenu }) {

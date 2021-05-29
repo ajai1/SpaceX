@@ -3,7 +3,9 @@ import Login from "./Login/Login";
 import Nav from "./Nav/Nav";
 
 import Contact from "./Contact/Contact";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+//routing --------------------------------------------------------------------------------
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//Component --------------------------------------------------------------------------------
 import PrivateRoute from "./Routing/PrivateRoute";
 import Info from "./Dashboard/Info/Info";
 import Launches from "./Dashboard/Launches/Launches";

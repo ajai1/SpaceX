@@ -1,7 +1,8 @@
 import React from "react";
+//material ui---------------------------------------------------------------------------
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import EmailIcon from "@material-ui/icons/Email";
+//CSS -----------------------------------------------------------------------------------
 import "./Contact.css";
 
 function Contact() {
