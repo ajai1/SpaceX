@@ -5,7 +5,7 @@ import Gwynne_Shotwell from "../../../Static/Gwynne_Shotwell.jpeg";
 
 import "./Info.css";
 
-const Info = (props) => {
+const Info = () => {
   const [info, setInfo] = useState({});
 
   useEffect(() => {
